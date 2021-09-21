@@ -13,7 +13,7 @@
 	<artifactId>BoxOfficeApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BoxOfficeApplication</name>
-	<description>Show tickets sale at Box office application</description>
+	<description>Show tickets sale at Box office </description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
