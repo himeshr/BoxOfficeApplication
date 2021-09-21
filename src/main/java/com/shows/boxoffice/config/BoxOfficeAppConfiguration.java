@@ -22,8 +22,9 @@ public class BoxOfficeAppConfiguration implements AppConstants {
 
 	@Autowired
 	public void initMovieTotalTicketsCounterChangeListener(
-			MovieTotalTicketsCounterConsumer observable,
-			MovieTotalTicketsAlertGenerator observer) {
-		observable.addPropertyChangeListener(observer);
+			MovieTotalTicketsCounterConsumer movieTotalTicketsCounterConsumer,
+			MovieTotalTicketsAlertGenerator movieTotalTicketsAlertGenerator) {
+		movieTotalTicketsCounterConsumer
+		.addPropertyChangeListener(movieTotalTicketsAlertGenerator);
 	}
 }
