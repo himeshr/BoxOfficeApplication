@@ -17,7 +17,7 @@ Your app should then be up and running.
 This application randomly generates SoldTicketsInfo objects using SoldTicketsInfoSupplier and feeds it into a stream.
 
 It has following consumers for the stream of SoldTicketsInfo objects.
-* SoldTicketsInfoPrinterConsumer - Prints movie name
+* SoldTicketsInfoPrinterConsumer - Prints movie name asynchronously for "Gold" seat tickets
 * MovieTotalTicketsCounterConsumer - Computes total tickets sold for a movie
 
 It also has a listener attached to MovieTotalTicketsCounterConsumer, which would raise alters if "Total tickets count for a particular movie exceeds preset threshold value".
