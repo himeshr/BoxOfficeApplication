@@ -11,19 +11,23 @@ import com.shows.boxoffice.config.AppConstants;
 import com.shows.boxoffice.data.SeatType;
 import com.shows.boxoffice.data.SoldTicketsInfo;
 
-@Component
+import io.reactivex.rxjava3.core.Maybe;
+
+@Component("stipConsumer")
 public class SoldTicketsInfoPrinterConsumer implements Consumer<SoldTicketsInfo>, AppConstants {
 
 	@Override
 	public void accept(SoldTicketsInfo sti) {
 		if(sti.getSeatType().equals(SeatType.Gold)) {
-			CompletableFuture.runAsync(() -> {
+			CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
 				Uninterruptibles.sleepUninterruptibly(1000,
 						TimeUnit.MILLISECONDS);
-				System.out.println(String.format(
-						"Asynchronously sent %s class tickets info for movie: %s ", 
-						sti.getSeatType(), sti.getMovieName()));
 		    });
+			Maybe.fromFuture(future).subscribe(v -> System.out.println("Got " + v),
+                    e -> System.err.println("Exception " + e),
+                    () -> System.out.println(String.format(
+    						"ASYNC-CONSUMER: Asynchronously sent %s class tickets info for movie: %s ", 
+    						sti.getSeatType(), sti.getMovieName())));
 		}
 	}
 }

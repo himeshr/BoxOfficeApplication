@@ -35,7 +35,7 @@ public class SoldTicketsInfoSupplier implements Supplier<SoldTicketsInfo>, AppCo
 			sti.setShowDate(getRandomShowDate());
 			sti.setMovieName(getRandomMovieName());
 			sti.setShowTime(getRandomShowTime());
-			System.out.println("Sold tickets detail: " + sti.toString());
+			System.out.println("SUPPLIER: Sold tickets detail: " + sti.toString());
 			return sti;
 		};
 	}
