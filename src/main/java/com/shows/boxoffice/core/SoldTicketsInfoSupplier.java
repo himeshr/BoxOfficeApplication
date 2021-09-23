@@ -16,7 +16,7 @@ import com.shows.boxoffice.data.SoldTicketsInfo;
 @Component
 public class SoldTicketsInfoSupplier implements Supplier<SoldTicketsInfo>, AppConstants {
 
-	private static final int MAX_TICKET_SALE_UNIT = 9;
+	private static final int MAX_TICKET_SALE_UNIT = 1;
 	private static final int TICKET_SALE_INTERVAL = 1000;
 	
 	private Random random;
