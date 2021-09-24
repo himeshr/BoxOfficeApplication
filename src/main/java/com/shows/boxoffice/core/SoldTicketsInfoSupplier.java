@@ -27,7 +27,7 @@ public class SoldTicketsInfoSupplier implements Supplier<SoldTicketsInfo>, AppCo
 		super();
 		this.random = new Random();
 		this.soldTicketsInfoSupplier = () -> {
-			sleepForRandomDuration(); 
+//			sleepForRandomDuration(); 
 
 			SoldTicketsInfo sti = new SoldTicketsInfo();
 			sti.setNumberOfTickets(getRandomTickets());
